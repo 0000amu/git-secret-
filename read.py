@@ -1,6 +1,7 @@
 import os
-username = os.getenv('USERNAME_ENV')
-password = os.getenv('PASSWORD_ENV')
+
+username = os.environ.get("USERNAME_ENV")
+password = os.environ.get("PASSWORD_ENV")
 
 print("Username:", username)
 print("Password:", password)
