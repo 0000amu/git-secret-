@@ -1,1 +1,20 @@
+name: CSV File Validator
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: run read secret program
+        env:
+            USERNAME_ENV: ${{ secrets.USERNAME }}
+            PASSWORD_ENV: ${{ secrets.PASSWORD }}
+        run: python3 read.py
